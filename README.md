@@ -1,5 +1,5 @@
 # MiniAudioO3DE
-This is a very early integration of https://miniaud.io/ into Open 3D Engine as a Gem. It has the most fundamental feature working already: sound playback, sound positioning, and listener positioning.
+This is a very early integration of https://miniaud.io/ into Open 3D Engine as a Gem. It has the most fundamental features working already: sound playback, sound positioning, and listener positioning.
 
 # Supported Sound Formats
 - Wav only for now (miniaudio supports a lot more)
