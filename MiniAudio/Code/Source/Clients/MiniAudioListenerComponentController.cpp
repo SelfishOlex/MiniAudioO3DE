@@ -38,7 +38,7 @@ namespace MiniAudio
 
     void MiniAudioListenerComponentController::GetProvidedServices(AZ::ComponentDescriptor::DependencyArrayType& provided)
     {
-        provided.push_back(AZ_CRC_CE("MiniAudioListenerComponentController"));
+        provided.push_back(AZ_CRC_CE("MiniAudioListenerComponent"));
     }
 
     void MiniAudioListenerComponentController::Activate(const AZ::EntityComponentIdPair& entityComponentIdPair)
