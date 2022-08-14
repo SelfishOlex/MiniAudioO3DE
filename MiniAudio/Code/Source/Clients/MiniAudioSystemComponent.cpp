@@ -94,6 +94,7 @@ namespace MiniAudio
 
     void MiniAudioSystemComponent::Deactivate()
     {
+        m_assetHandlers.clear();
         ma_engine_uninit(&m_engine);
 
         MiniAudioRequestBus::Handler::BusDisconnect();
