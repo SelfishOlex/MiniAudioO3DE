@@ -71,6 +71,7 @@ namespace MiniAudio
     {
         m_entityMovedHandler.Disconnect();
         UnloadSound();
+        m_config.m_sound.Release();
 
         MiniAudioPlaybackRequestBus::Handler::BusDisconnect();
         AZ::Data::AssetBus::MultiHandler::BusDisconnect();
