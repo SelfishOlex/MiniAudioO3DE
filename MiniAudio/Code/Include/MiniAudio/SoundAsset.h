@@ -9,6 +9,8 @@
 #pragma once
 
 #include <AzCore/Asset/AssetCommon.h>
+#include <AzCore/Asset/AssetSerializer.h>
+#include <AzCore/std/containers/vector.h>
 
 namespace MiniAudio
 {
@@ -30,4 +32,7 @@ namespace MiniAudio
 
         AZStd::vector<AZ::u8> m_data;
     };
+
+    using SoundDataAsset = AZ::Data::Asset<SoundAsset>;
+    using SoundDataAssetVector = AZStd::vector<AZ::Data::Asset<SoundAsset>>;
 } // namespace MiniAudio

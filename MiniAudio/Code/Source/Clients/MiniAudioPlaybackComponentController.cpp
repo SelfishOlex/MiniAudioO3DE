@@ -40,7 +40,7 @@ namespace MiniAudio
 
     void MiniAudioPlaybackComponentController::GetProvidedServices(AZ::ComponentDescriptor::DependencyArrayType& provided)
     {
-        provided.push_back(AZ_CRC_CE("MiniAudioPlaybackComponentController"));
+        provided.push_back(AZ_CRC_CE("MiniAudioPlaybackComponent"));
     }
 
     void MiniAudioPlaybackComponentController::Activate(const AZ::EntityComponentIdPair& entityComponentIdPair)
@@ -71,6 +71,7 @@ namespace MiniAudio
     {
         m_entityMovedHandler.Disconnect();
         UnloadSound();
+        m_config.m_sound.Release();
 
         MiniAudioPlaybackRequestBus::Handler::BusDisconnect();
         AZ::Data::AssetBus::MultiHandler::BusDisconnect();
@@ -181,7 +182,7 @@ namespace MiniAudio
 
         if (ma_engine* engine = MiniAudioInterface::Get()->GetSoundEngine())
         {
-            //if (m_controller.GetConfiguration().m_sound.IsReady())
+            if (GetConfiguration().m_sound.IsReady())
             {
                 m_soundName = GetConfiguration().m_sound.GetHint();
 

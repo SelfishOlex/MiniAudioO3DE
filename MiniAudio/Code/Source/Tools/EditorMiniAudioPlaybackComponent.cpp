@@ -65,10 +65,9 @@ namespace MiniAudio
 
                     ->DataElement(AZ::Edit::UIHandlers::Default, &MiniAudioPlaybackComponentConfig::m_autoplayOnActivate, "Autoplay", "Plays the sound on activation of the component.")
                     ->DataElement(AZ::Edit::UIHandlers::Default, &MiniAudioPlaybackComponentConfig::m_loop, "Loop", "Loops the sound.")
-                    ->DataElement(AZ::Edit::UIHandlers::Slider, &MiniAudioPlaybackComponentConfig::m_volume, "Volume", "The volume of the sound when played.")
+                    ->DataElement(AZ::Edit::UIHandlers::Default, &MiniAudioPlaybackComponentConfig::m_volume, "Volume", "The volume of the sound when played.")
                     ->Attribute(AZ::Edit::Attributes::Min, 0.f)
-                    ->Attribute(AZ::Edit::Attributes::SoftMax, 1.f)
-                    ->Attribute(AZ::Edit::Attributes::ChangeNotify, &EditorMiniAudioPlaybackComponent::OnVolumeChanged)
+                    ->Attribute(AZ::Edit::Attributes::SoftMax, 10.f)
 
                     ->DataElement(AZ::Edit::UIHandlers::Default, &MiniAudioPlaybackComponentConfig::m_autoFollowEntity, "Auto-follow",
                         "The sound's position is updated to match the entity's position.")
@@ -80,7 +79,6 @@ namespace MiniAudio
                     ->EnumAttribute(AttenuationModel::Inverse, "Inverse")
                     ->EnumAttribute(AttenuationModel::Exponential, "Exponential")
                     ->EnumAttribute(AttenuationModel::Linear, "Linear")
-                    ->Attribute(AZ::Edit::Attributes::ChangeNotify, AZ::Edit::PropertyRefreshLevels::ValuesOnly)
 
                     ->DataElement(AZ::Edit::UIHandlers::Default, &MiniAudioPlaybackComponentConfig::m_minimumDistance, "Min Distance", "Minimum distance for attenuation.")
                     ->DataElement(AZ::Edit::UIHandlers::Default, &MiniAudioPlaybackComponentConfig::m_maximumDistance, "Max Distance", "Maximum distance for attenuation.")
