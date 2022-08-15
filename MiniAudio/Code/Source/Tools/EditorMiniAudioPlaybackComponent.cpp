@@ -68,7 +68,6 @@ namespace MiniAudio
                     ->DataElement(AZ::Edit::UIHandlers::Default, &MiniAudioPlaybackComponentConfig::m_volume, "Volume", "The volume of the sound when played.")
                     ->Attribute(AZ::Edit::Attributes::Min, 0.f)
                     ->Attribute(AZ::Edit::Attributes::SoftMax, 10.f)
-                    ->Attribute(AZ::Edit::Attributes::ChangeNotify, &EditorMiniAudioPlaybackComponent::OnVolumeChanged)
 
                     ->DataElement(AZ::Edit::UIHandlers::Default, &MiniAudioPlaybackComponentConfig::m_autoFollowEntity, "Auto-follow",
                         "The sound's position is updated to match the entity's position.")
