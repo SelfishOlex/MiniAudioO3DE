@@ -12,8 +12,6 @@
 #include <AzCore/Component/TransformBus.h>
 #include <AzCore/Serialization/EditContext.h>
 
-#pragma optimize("", off)
-
 namespace MiniAudio
 {
     MiniAudioPlaybackComponentController::MiniAudioPlaybackComponentController()
