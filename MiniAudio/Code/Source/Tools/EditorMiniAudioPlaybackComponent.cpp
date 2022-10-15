@@ -74,7 +74,7 @@ namespace MiniAudio
 
                     ->ClassElement(AZ::Edit::ClassElements::Group, "Spatialization")
                     ->Attribute(AZ::Edit::Attributes::AutoExpand, false)
-                    ->DataElement(AZ::Edit::UIHandlers::Default, &MiniAudioPlaybackComponentConfig::m_enableSpatialization, "Spatialization", "If false the sound will have have 3D spatialization effects applied to it.")
+                    ->DataElement(AZ::Edit::UIHandlers::Default, &MiniAudioPlaybackComponentConfig::m_enableSpatialization, "Spatialization", "If true the sound will have 3D position in the world and will have effects applied to it based on the distance from a sound listener.")
                     ->DataElement(AZ::Edit::UIHandlers::ComboBox, &MiniAudioPlaybackComponentConfig::m_attenuationModel, "Attenuation", "Attenuation model.")
                     ->EnumAttribute(AttenuationModel::Inverse, "Inverse")
                     ->EnumAttribute(AttenuationModel::Exponential, "Exponential")
