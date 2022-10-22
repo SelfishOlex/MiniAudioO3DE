@@ -44,6 +44,20 @@ This is a very early integration of https://miniaud.io/ into Open 3D Engine as a
         required.push_back(AZ_CRC_CE("MiniAudioPlaybackComponent"));
     }
     ```
+    
+# How-To in Scripting 
+
+The following nodes are exposed to scripting. (Currently only availalble in development branch.)
+
+![image](https://user-images.githubusercontent.com/5432499/197317433-18b16407-2bd8-4deb-abf1-53dd67f1d831.png)
+
+For the playback component:
+![image](https://user-images.githubusercontent.com/5432499/197317353-60f694af-4a30-46d8-bb85-89519f9e87de.png)
+
+For the listener component:
+![image](https://user-images.githubusercontent.com/5432499/197317439-5cf7eaad-b5ab-4fb1-86ac-c6d2fb75a4cd.png)
+
+
 
 # License
 
