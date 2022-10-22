@@ -35,6 +35,14 @@ namespace MiniAudio
                 ->Attribute(AZ::Script::Attributes::Module, "MiniAudio")
                 ->Attribute(AZ::Script::Attributes::Scope, AZ::Script::Attributes::ScopeFlags::Common);
 
+            behaviorContext->EBus<MiniAudioListenerRequestBus>("MiniAudioListenerRequestBus")
+                ->Attribute(AZ::Script::Attributes::Scope, AZ::Script::Attributes::ScopeFlags::Common)
+                ->Attribute(AZ::Script::Attributes::Module, "audio")
+                ->Attribute(AZ::Script::Attributes::Category, "MiniAudio Listener")
+                ->Event("SetPosition", &MiniAudioListenerRequests::SetPosition)
+                ->Event("SetFollowEntity", &MiniAudioListenerRequests::SetFollowEntity)
+                ;
+
             behaviorContext->Class<MiniAudioListenerComponent>()->RequestBus("MiniAudioListenerRequestBus");
         }
     }

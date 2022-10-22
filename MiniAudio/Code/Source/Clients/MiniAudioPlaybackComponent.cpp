@@ -38,7 +38,7 @@ namespace MiniAudio
             behaviorContext->EBus<MiniAudioPlaybackRequestBus>("MiniAudioPlaybackRequestBus")
                 ->Attribute(AZ::Script::Attributes::Scope, AZ::Script::Attributes::ScopeFlags::Common)
                 ->Attribute(AZ::Script::Attributes::Module, "audio")
-                ->Attribute(AZ::Script::Attributes::Category, "MiniAudio")
+                ->Attribute(AZ::Script::Attributes::Category, "MiniAudio Playback")
                 ->Event("Play", &MiniAudioPlaybackRequests::Play)
                 ->Event("Stop", &MiniAudioPlaybackRequests::Stop)
                 ->Event("SetVolume", &MiniAudioPlaybackRequests::SetVolume)
