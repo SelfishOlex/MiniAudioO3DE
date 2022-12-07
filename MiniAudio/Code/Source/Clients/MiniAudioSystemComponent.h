@@ -34,18 +34,23 @@ namespace MiniAudio
         MiniAudioSystemComponent();
         MiniAudioSystemComponent(const MiniAudioSystemComponent&) = delete;
         MiniAudioSystemComponent& operator=(const MiniAudioSystemComponent&) = delete;
-        ~MiniAudioSystemComponent();
+        ~MiniAudioSystemComponent() override;
 
         // AZ::Component interface implementation
         void Init() override;
         void Activate() override;
         void Deactivate() override;
 
-        // MiniAudioRequestBus
+        // MiniAudioRequestBus interface implementation
         ma_engine* GetSoundEngine() override;
+        void SetGlobalVolume(float scale) override;
+        float GetGlobalVolume() const override;
+        void SetGlobalVolumeInDecibels(float decibels) override;
 
     private:
-        ma_engine m_engine;
+        ma_engine m_engine{};
+
+        float m_globalVolume = 1.f;
 
         // Assets related data
         AZStd::vector<AZStd::unique_ptr<AZ::Data::AssetHandler>> m_assetHandlers;

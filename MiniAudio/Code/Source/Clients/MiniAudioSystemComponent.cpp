@@ -104,4 +104,21 @@ namespace MiniAudio
     {
         return &m_engine;
     }
+
+    void MiniAudioSystemComponent::SetGlobalVolume(float scale)
+    {
+        m_globalVolume = scale;
+        ma_engine_set_volume(&m_engine, m_globalVolume);
+    }
+
+    float MiniAudioSystemComponent::GetGlobalVolume() const
+    {
+        return m_globalVolume;
+    }
+
+    void MiniAudioSystemComponent::SetGlobalVolumeInDecibels(float decibels)
+    {
+        m_globalVolume = ma_volume_db_to_linear(decibels);
+        SetGlobalVolume(m_globalVolume);
+    }
 } // namespace MiniAudio

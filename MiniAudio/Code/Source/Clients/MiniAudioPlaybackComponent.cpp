@@ -35,7 +35,20 @@ namespace MiniAudio
                 ->Attribute(AZ::Script::Attributes::Module, "MiniAudio")
                 ->Attribute(AZ::Script::Attributes::Scope, AZ::Script::Attributes::ScopeFlags::Common);
 
-            behaviorContext->Class<MiniAudioPlaybackComponent>()->RequestBus("MiniAudioPlaybackRequestBus");
+            behaviorContext->EBus<MiniAudioPlaybackRequestBus>("MiniAudioPlaybackRequestBus")
+                ->Attribute(AZ::Script::Attributes::Scope, AZ::Script::Attributes::ScopeFlags::Common)
+                ->Attribute(AZ::Script::Attributes::Module, "audio")
+                ->Attribute(AZ::Script::Attributes::Category, "MiniAudio Playback")
+                ->Event("Play", &MiniAudioPlaybackRequests::Play)
+                ->Event("Stop", &MiniAudioPlaybackRequests::Stop)
+                ->Event("SetVolume", &MiniAudioPlaybackRequests::SetVolume)
+                ->Event("SetLooping", &MiniAudioPlaybackRequests::SetLooping)
+                ->Event("IsLooping", &MiniAudioPlaybackRequests::IsLooping)
+                ->Event("SetSoundAsset", &MiniAudioPlaybackRequests::SetSoundAsset)
+                ->Event("GetSoundAsset", &MiniAudioPlaybackRequests::GetSoundAsset)
+            ;
+
+            behaviorContext->Class<MiniAudioPlaybackComponentController>()->RequestBus("MiniAudioPlaybackRequestBus");
         }
     }
 } // namespace MiniAudio
