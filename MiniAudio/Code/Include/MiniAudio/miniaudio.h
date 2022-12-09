@@ -18035,7 +18035,7 @@ static void ma_device__send_frames_to_client(ma_device* pDevice, ma_uint32 frame
         ma_uint8 pFramesInClientFormat[MA_DATA_CONVERTER_STACK_BUFFER_SIZE];
         ma_uint64 framesInClientFormatCap = sizeof(pFramesInClientFormat) / ma_get_bytes_per_frame(pDevice->capture.format, pDevice->capture.channels);
         ma_uint64 totalDeviceFramesProcessed = 0;
-        ma_uint64 totalClientFramesProcessed = 0;
+        [[maybe_unused]] ma_uint64 totalClientFramesProcessed = 0;
         const void* pRunningFramesInDeviceFormat = pFramesInDeviceFormat;
 
         /* We just keep going until we've exhaused all of our input frames and cannot generate any more output frames. */
