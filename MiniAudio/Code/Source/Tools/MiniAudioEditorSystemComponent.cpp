@@ -72,6 +72,10 @@ namespace MiniAudio
         materialAssetBuilderDescriptor.m_version = 2; // bump this to rebuild all sound files
         materialAssetBuilderDescriptor.m_patterns.push_back(AssetBuilderSDK::AssetBuilderPattern("*.wav",
             AssetBuilderSDK::AssetBuilderPattern::PatternType::Wildcard));
+        materialAssetBuilderDescriptor.m_patterns.push_back(AssetBuilderSDK::AssetBuilderPattern("*.flac",
+            AssetBuilderSDK::AssetBuilderPattern::PatternType::Wildcard));
+        materialAssetBuilderDescriptor.m_patterns.push_back(AssetBuilderSDK::AssetBuilderPattern("*.mp3",
+            AssetBuilderSDK::AssetBuilderPattern::PatternType::Wildcard));
         materialAssetBuilderDescriptor.m_busId = azrtti_typeid<SoundAssetBuilder>();
         materialAssetBuilderDescriptor.m_createJobFunction = [this](const AssetBuilderSDK::CreateJobsRequest& request,
             AssetBuilderSDK::CreateJobsResponse& response)
