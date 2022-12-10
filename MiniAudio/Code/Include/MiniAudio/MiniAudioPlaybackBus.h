@@ -10,8 +10,7 @@
 
 #include <AzCore/Component/ComponentBus.h>
 #include <MiniAudio/SoundAsset.h>
-
-#include "SoundAssetRef.h"
+#include <MiniAudio/SoundAssetRef.h>
 
 namespace MiniAudio
 {
@@ -29,7 +28,7 @@ namespace MiniAudio
         virtual AZ::Data::Asset<SoundAsset> GetSoundAsset() const = 0;
 
         //! Custom setter for scripting
-        virtual void SetSoundAssetRef(SoundAssetRef soundAssetRef) = 0;
+        virtual void SetSoundAssetRef(const SoundAssetRef& soundAssetRef) = 0;
         //! Custom getter for scripting
         virtual SoundAssetRef GetSoundAssetRef() const = 0;
     };

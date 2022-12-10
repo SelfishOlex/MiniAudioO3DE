@@ -140,7 +140,7 @@ namespace MiniAudio
         return ref;
     }
 
-    void MiniAudioPlaybackComponentController::SetSoundAssetRef(SoundAssetRef soundAssetRef)
+    void MiniAudioPlaybackComponentController::SetSoundAssetRef(const SoundAssetRef& soundAssetRef)
     {
         SetSoundAsset(soundAssetRef.GetAsset());
     }
