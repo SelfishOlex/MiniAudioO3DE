@@ -31,4 +31,5 @@ set(FILES
     Source/Clients/SoundAssetHandler.cpp
     Source/Clients/SoundAssetHandler.h
     Source/Clients/SoundAsset.cpp
+    Source/Clients/SoundAssetRef.cpp
 )

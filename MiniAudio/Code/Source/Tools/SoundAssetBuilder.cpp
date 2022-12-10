@@ -67,7 +67,12 @@ namespace MiniAudio
 
         AZStd::string filename;
         AzFramework::StringFunc::Path::GetFileName(request.m_sourceFile.c_str(), filename);
-        AzFramework::StringFunc::Path::ReplaceExtension(filename, SoundAsset::FileExtension);
+
+        AZStd::string currentExtension;
+        AzFramework::StringFunc::Path::GetExtension(request.m_sourceFile.c_str(), currentExtension);
+        AZStd::string outputExtension = currentExtension + "." + SoundAsset::FileExtension;
+
+        AzFramework::StringFunc::Path::ReplaceExtension(filename, outputExtension.c_str());
 
         AZStd::string outputPath;
         AzFramework::StringFunc::Path::ConstructFull(request.m_tempDirPath.c_str(), filename.c_str(), outputPath, true);

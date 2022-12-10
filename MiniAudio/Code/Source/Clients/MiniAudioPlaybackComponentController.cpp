@@ -133,6 +133,18 @@ namespace MiniAudio
         }
     }
 
+    SoundAssetRef MiniAudioPlaybackComponentController::GetSoundAssetRef() const
+    {
+        SoundAssetRef ref;
+        ref.SetAsset(GetSoundAsset());
+        return ref;
+    }
+
+    void MiniAudioPlaybackComponentController::SetSoundAssetRef(SoundAssetRef soundAssetRef)
+    {
+        SetSoundAsset(soundAssetRef.GetAsset());
+    }
+
     void MiniAudioPlaybackComponentController::OnAssetReady(AZ::Data::Asset<AZ::Data::AssetData> asset)
     {
         AZ::Data::AssetBus::MultiHandler::BusDisconnect(asset.GetId());
