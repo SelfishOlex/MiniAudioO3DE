@@ -50,6 +50,8 @@ namespace MiniAudio
         bool IsLooping() const override;
         AZ::Data::Asset<SoundAsset> GetSoundAsset() const override;
         void SetSoundAsset(AZ::Data::Asset<SoundAsset> soundAsset) override;
+        SoundAssetRef GetSoundAssetRef() const override;
+        void SetSoundAssetRef(const SoundAssetRef& soundAssetRef) override;
 
         // MultiHandler
         void OnAssetReady(AZ::Data::Asset<AZ::Data::AssetData> asset) override;

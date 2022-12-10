@@ -10,6 +10,7 @@
 
 #include <AzCore/Component/ComponentBus.h>
 #include <MiniAudio/SoundAsset.h>
+#include <MiniAudio/SoundAssetRef.h>
 
 namespace MiniAudio
 {
@@ -25,6 +26,11 @@ namespace MiniAudio
         virtual bool IsLooping() const = 0;
         virtual void SetSoundAsset(AZ::Data::Asset<SoundAsset> soundAsset) = 0;
         virtual AZ::Data::Asset<SoundAsset> GetSoundAsset() const = 0;
+
+        //! Custom setter for scripting
+        virtual void SetSoundAssetRef(const SoundAssetRef& soundAssetRef) = 0;
+        //! Custom getter for scripting
+        virtual SoundAssetRef GetSoundAssetRef() const = 0;
     };
 
     using MiniAudioPlaybackRequestBus = AZ::EBus<MiniAudioPlaybackRequests>;
