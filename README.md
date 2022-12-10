@@ -2,8 +2,8 @@
 This is a very early integration of https://miniaud.io/ into Open 3D Engine as a Gem. It has the most fundamental features working already: sound playback, sound positioning, and listener positioning. One can test the sounds in the Editor viewport without entering game mode.
 
 # Supported Sound Formats
-- Wav only (in main branch)
-- Mp3, Flac and Ogg support is available in development branch
+- Wav (in main branch)
+- Mp3, Flac and Ogg support is available in development branch (to be tested and merged to main when appropriate)
 
 # Components
 - MiniAudio Playback Component
