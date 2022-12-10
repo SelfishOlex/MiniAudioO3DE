@@ -48,7 +48,7 @@ This is a very early integration of https://miniaud.io/ into Open 3D Engine as a
     
 # How-To in Scripting 
 
-The following nodes are exposed to scripting. (Currently only availalble in development branch.)
+The following nodes are exposed to scripting. (Currently only available in development branch.)
 
 ![image](https://user-images.githubusercontent.com/5432499/197317433-18b16407-2bd8-4deb-abf1-53dd67f1d831.png)
 
