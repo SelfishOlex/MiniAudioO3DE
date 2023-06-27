@@ -19,12 +19,6 @@ namespace MiniAudio
     {
         if (auto serializeContext = azrtti_cast<AZ::SerializeContext*>(context))
         {
-            serializeContext->Class<MiniAudioEditorSystemComponent, MiniAudioSystemComponent>()
-                ->Version(0);
-        }
-
-        if (auto serializeContext = azrtti_cast<AZ::SerializeContext*>(context))
-        {
             serializeContext->Class<MiniAudioEditorSystemComponent, AZ::Component>()
                 ->Version(1)
                 ->Attribute(AZ::Edit::Attributes::SystemComponentTags, AZStd::vector<AZ::Crc32>({ AZ_CRC_CE("AssetBuilder") }))
