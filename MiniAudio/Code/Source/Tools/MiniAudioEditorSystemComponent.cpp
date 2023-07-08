@@ -19,12 +19,6 @@ namespace MiniAudio
     {
         if (auto serializeContext = azrtti_cast<AZ::SerializeContext*>(context))
         {
-            serializeContext->Class<MiniAudioEditorSystemComponent, MiniAudioSystemComponent>()
-                ->Version(0);
-        }
-
-        if (auto serializeContext = azrtti_cast<AZ::SerializeContext*>(context))
-        {
             serializeContext->Class<MiniAudioEditorSystemComponent, AZ::Component>()
                 ->Version(1)
                 ->Attribute(AZ::Edit::Attributes::SystemComponentTags, AZStd::vector<AZ::Crc32>({ AZ_CRC_CE("AssetBuilder") }))
@@ -69,7 +63,13 @@ namespace MiniAudio
         // Register MiniSound Asset Builder
         AssetBuilderSDK::AssetBuilderDesc materialAssetBuilderDescriptor;
         materialAssetBuilderDescriptor.m_name = "MiniSound Asset Builder";
-        materialAssetBuilderDescriptor.m_version = 2; // bump this to rebuild all sound files
+        materialAssetBuilderDescriptor.m_version = 3; // bump this to rebuild all sound files
+        materialAssetBuilderDescriptor.m_patterns.push_back(AssetBuilderSDK::AssetBuilderPattern("*.ogg",
+            AssetBuilderSDK::AssetBuilderPattern::PatternType::Wildcard));
+        materialAssetBuilderDescriptor.m_patterns.push_back(AssetBuilderSDK::AssetBuilderPattern("*.flac",
+            AssetBuilderSDK::AssetBuilderPattern::PatternType::Wildcard));
+        materialAssetBuilderDescriptor.m_patterns.push_back(AssetBuilderSDK::AssetBuilderPattern("*.mp3",
+            AssetBuilderSDK::AssetBuilderPattern::PatternType::Wildcard));
         materialAssetBuilderDescriptor.m_patterns.push_back(AssetBuilderSDK::AssetBuilderPattern("*.wav",
             AssetBuilderSDK::AssetBuilderPattern::PatternType::Wildcard));
         materialAssetBuilderDescriptor.m_busId = azrtti_typeid<SoundAssetBuilder>();

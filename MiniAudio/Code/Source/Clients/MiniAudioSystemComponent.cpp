@@ -10,6 +10,7 @@
 
 #include <AzCore/Serialization/EditContext.h>
 #include <MiniAudio/SoundAsset.h>
+#include <MiniAudio/SoundAssetRef.h>
 
 #include "SoundAssetHandler.h"
 
@@ -18,6 +19,7 @@ namespace MiniAudio
     void MiniAudioSystemComponent::Reflect(AZ::ReflectContext* context)
     {
         SoundAsset::Reflect(context);
+        SoundAssetRef::Reflect(context);
 
         if (AZ::SerializeContext* serialize = azrtti_cast<AZ::SerializeContext*>(context))
         {
