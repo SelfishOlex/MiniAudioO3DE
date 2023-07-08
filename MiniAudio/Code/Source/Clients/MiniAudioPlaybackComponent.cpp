@@ -10,6 +10,7 @@
 
 #include <AzCore/Asset/AssetSerializer.h>
 #include <AzCore/Serialization/EditContext.h>
+#include <MiniAudio/SoundAssetRef.h>
 
 namespace MiniAudio
 {
@@ -44,8 +45,8 @@ namespace MiniAudio
                 ->Event("SetVolume", &MiniAudioPlaybackRequests::SetVolume)
                 ->Event("SetLooping", &MiniAudioPlaybackRequests::SetLooping)
                 ->Event("IsLooping", &MiniAudioPlaybackRequests::IsLooping)
-                ->Event("SetSoundAsset", &MiniAudioPlaybackRequests::SetSoundAsset)
-                ->Event("GetSoundAsset", &MiniAudioPlaybackRequests::GetSoundAsset)
+                ->Event("SetSoundAsset", &MiniAudioPlaybackRequests::SetSoundAssetRef)
+                ->Event("GetSoundAsset", &MiniAudioPlaybackRequests::GetSoundAssetRef)
             ;
 
             behaviorContext->Class<MiniAudioPlaybackComponentController>()->RequestBus("MiniAudioPlaybackRequestBus");

@@ -13,4 +13,6 @@ set(FILES
     Include/MiniAudio/MiniAudioListenerBus.h
     Include/MiniAudio/MiniAudioPlaybackBus.h
     Include/MiniAudio/SoundAsset.h
+    Include/MiniAudio/SoundAssetRef.h
+    Include/MiniAudio/stb_vorbis.c
 )
