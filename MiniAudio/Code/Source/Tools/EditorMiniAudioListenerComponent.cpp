@@ -14,6 +14,11 @@
 
 namespace MiniAudio
 {
+    AZ::ComponentDescriptor* EditorMiniAudioListenerComponent_CreateDescriptor()
+    {
+        return EditorMiniAudioListenerComponent::CreateDescriptor();
+    }
+
     void EditorMiniAudioListenerComponent::Reflect(AZ::ReflectContext* context)
     {
         BaseClass::Reflect(context);

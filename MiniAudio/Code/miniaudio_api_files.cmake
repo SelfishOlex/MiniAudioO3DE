@@ -7,12 +7,10 @@
 #
 
 set(FILES
-    Include/MiniAudio/miniaudio.h
     Include/MiniAudio/MiniAudioBus.h
     Include/MiniAudio/MiniAudioConstants.h
     Include/MiniAudio/MiniAudioListenerBus.h
     Include/MiniAudio/MiniAudioPlaybackBus.h
     Include/MiniAudio/SoundAsset.h
     Include/MiniAudio/SoundAssetRef.h
-    Include/MiniAudio/stb_vorbis.c
 )

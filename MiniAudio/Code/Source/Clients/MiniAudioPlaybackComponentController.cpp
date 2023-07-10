@@ -12,9 +12,17 @@
 #include <AzCore/Component/TransformBus.h>
 #include <AzCore/Serialization/EditContext.h>
 
+#include "MiniAudioIncludes.h"
+
 namespace MiniAudio
 {
     MiniAudioPlaybackComponentController::MiniAudioPlaybackComponentController()
+    {
+    }
+
+    // placement of this destructor is intentional.  It forces unique_ptr<ma_sound> to declare its destructor here
+    // instead of in the header before inclusion of the giant MiniAudioIncludes.h file
+    MiniAudioPlaybackComponentController::~MiniAudioPlaybackComponentController() 
     {
     }
 

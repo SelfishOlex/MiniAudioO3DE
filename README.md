@@ -63,3 +63,8 @@ For the listener component:
 
 Same license as Open 3D Engine, see https://github.com/o3de/o3de
 
+Uses 3rd party components under their own license:
+ * MiniAudio:  See ./3rdParty/miniaudio/LICENSE.TXT  - choose between either Public Domain (www.unlicense.org) or MIT No Attribution
+ * stb_vorbis: See ./3rdParty/stb_vorbis/LICENSE.TXT - choose between either Public Domain (www.unlicense.org) or MIT
+
+ 

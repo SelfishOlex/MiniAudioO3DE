@@ -12,6 +12,8 @@
 #include <AzCore/Component/TransformBus.h>
 #include <AzCore/Serialization/EditContext.h>
 
+#include "MiniaudioIncludes.h"
+
 namespace MiniAudio
 {
     MiniAudioListenerComponentController::MiniAudioListenerComponentController()

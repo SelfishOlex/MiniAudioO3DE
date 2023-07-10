@@ -12,16 +12,16 @@
 #include <AzCore/Component/ComponentBus.h>
 #include <AzCore/RTTI/RTTI.h>
 #include <AzCore/Serialization/EditContext.h>
-#include <MiniAudio/miniaudio.h>
 #include <MiniAudio/SoundAsset.h>
 
 namespace MiniAudio
 {
-    enum class AttenuationModel 
+    // AttenuationModel hidden here to prevent needing to include miniaudio.h here.
+    enum class AttenuationModel  // must match ma_attenuation_model from miniaudio.   
     {
-        Inverse = ma_attenuation_model_inverse,
-        Linear = ma_attenuation_model_linear,
-        Exponential = ma_attenuation_model_exponential
+        Inverse = 1, //ma_attenuation_model_inverse,
+        Linear = 2, // ma_attenuation_model_linear,
+        Exponential = 3, //= ma_attenuation_model_exponential
     };
 
     class MiniAudioPlaybackComponentConfig final

@@ -12,8 +12,11 @@
 #include <AzCore/Component/TickBus.h>
 #include <AzCore/std/smart_ptr/unique_ptr.h>
 #include <AzCore/Asset/AssetManager.h>
-#include <MiniAudio/miniaudio.h>
 #include <MiniAudio/MiniAudioBus.h>
+
+// avoid including MiniAudioIncludes here to speed up compilation
+
+struct ma_engine;
 
 namespace MiniAudio
 {
@@ -34,7 +37,7 @@ namespace MiniAudio
         MiniAudioSystemComponent();
         MiniAudioSystemComponent(const MiniAudioSystemComponent&) = delete;
         MiniAudioSystemComponent& operator=(const MiniAudioSystemComponent&) = delete;
-        ~MiniAudioSystemComponent() override;
+        virtual ~MiniAudioSystemComponent() override;
 
         // AZ::Component interface implementation
         void Init() override;
@@ -48,7 +51,7 @@ namespace MiniAudio
         void SetGlobalVolumeInDecibels(float decibels) override;
 
     private:
-        ma_engine m_engine{};
+        std::unique_ptr<ma_engine> m_engine;
 
         float m_globalVolume = 1.f;
 

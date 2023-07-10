@@ -10,7 +10,6 @@
 
 #include <AzCore/Asset/AssetCommon.h>
 #include <AzCore/Asset/AssetTypeInfoBus.h>
-#include <Clients/MiniAudioSystemComponent.h>
 
 namespace MiniAudio
 {

@@ -8,12 +8,13 @@
 
 #include <MiniAudioModuleInterface.h>
 
-#include "EditorMiniAudioListenerComponent.h"
-#include "EditorMiniAudioPlaybackComponent.h"
-#include "MiniAudioEditorSystemComponent.h"
-
 namespace MiniAudio
 {
+    extern AZ::TypeId MiniAudioEditorSystemComponent_GetTypeId();
+    extern AZ::ComponentDescriptor* MiniAudioEditorSystemComponent_CreateDescriptor();
+    extern AZ::ComponentDescriptor* EditorMiniAudioListenerComponent_CreateDescriptor();
+    extern AZ::ComponentDescriptor* EditorMiniAudioPlaybackComponent_CreateDescriptor();
+
     class MiniAudioEditorModule
         : public MiniAudioModuleInterface
     {
@@ -28,9 +29,9 @@ namespace MiniAudio
             // This will associate the AzTypeInfo information for the components with the the SerializeContext, BehaviorContext and EditContext.
             // This happens through the [MyComponent]::Reflect() function.
             m_descriptors.insert(m_descriptors.end(), {
-                MiniAudioEditorSystemComponent::CreateDescriptor(),
-                EditorMiniAudioListenerComponent::CreateDescriptor(),
-                EditorMiniAudioPlaybackComponent::CreateDescriptor(),
+                MiniAudioEditorSystemComponent_CreateDescriptor(),
+                EditorMiniAudioListenerComponent_CreateDescriptor(),
+                EditorMiniAudioPlaybackComponent_CreateDescriptor(),
             });
         }
 
@@ -41,7 +42,7 @@ namespace MiniAudio
         AZ::ComponentTypeList GetRequiredSystemComponents() const override
         {
             return AZ::ComponentTypeList {
-                azrtti_typeid<MiniAudioEditorSystemComponent>(),
+                MiniAudioEditorSystemComponent_GetTypeId(),
             };
         }
     };
