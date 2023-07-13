@@ -10,6 +10,8 @@
 
 # for licenses of the sub-parts, please see their repos in github, or, licenses.txt in this folder.
 
+include(FetchContent)
+
 FetchContent_Declare(
     stb_vorbis
     URL          https://raw.githubusercontent.com/nothings/stb/5736b15f7ea0ffb08dd38af21067c314d6a3aae9/stb_vorbis.c
