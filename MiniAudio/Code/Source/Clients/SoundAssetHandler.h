@@ -10,7 +10,7 @@
 
 #include <AzCore/Asset/AssetCommon.h>
 #include <AzCore/Asset/AssetTypeInfoBus.h>
-#include <Clients/MiniAudioSystemComponent.h>
+#include <AzCore/Asset/AssetManager.h> // this is where AssetHandler is defined
 
 namespace MiniAudio
 {

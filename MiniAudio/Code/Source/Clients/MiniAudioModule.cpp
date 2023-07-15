@@ -8,7 +8,6 @@
 
 
 #include <MiniAudioModuleInterface.h>
-#include "MiniAudioSystemComponent.h"
 
 namespace MiniAudio
 {

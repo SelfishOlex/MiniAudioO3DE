@@ -13,9 +13,20 @@
 #include <MiniAudio/SoundAssetRef.h>
 
 #include "SoundAssetHandler.h"
+#include "MiniAudioIncludes.h"
 
 namespace MiniAudio
 {
+    AZ::ComponentDescriptor* MiniAudioSystemComponent_CreateDescriptor()
+    {
+        return MiniAudioSystemComponent::CreateDescriptor();
+    }
+
+    AZ::TypeId MiniAudioSystemComponent_GetTypeId()
+    {
+        return azrtti_typeid<MiniAudioSystemComponent>();
+    }
+
     void MiniAudioSystemComponent::Reflect(AZ::ReflectContext* context)
     {
         SoundAsset::Reflect(context);
@@ -78,7 +89,8 @@ namespace MiniAudio
 
     void MiniAudioSystemComponent::Activate()
     {
-        const ma_result result = ma_engine_init(nullptr, &m_engine);
+        m_engine = AZStd::make_unique<ma_engine>();
+        const ma_result result = ma_engine_init(nullptr, m_engine.get());
         if (result != MA_SUCCESS)
         {
             AZ_Error("MiniAudio", false, "Failed to initialize audio engine, error %d", result);
@@ -97,20 +109,20 @@ namespace MiniAudio
     void MiniAudioSystemComponent::Deactivate()
     {
         m_assetHandlers.clear();
-        ma_engine_uninit(&m_engine);
-
+        ma_engine_uninit(m_engine.get());
+        m_engine.reset();
         MiniAudioRequestBus::Handler::BusDisconnect();
     }
 
     ma_engine* MiniAudioSystemComponent::GetSoundEngine()
     {
-        return &m_engine;
+        return m_engine.get();
     }
 
     void MiniAudioSystemComponent::SetGlobalVolume(float scale)
     {
         m_globalVolume = scale;
-        ma_engine_set_volume(&m_engine, m_globalVolume);
+        ma_engine_set_volume(m_engine.get(), m_globalVolume);
     }
 
     float MiniAudioSystemComponent::GetGlobalVolume() const

@@ -13,6 +13,7 @@
 #include <AzCore/std/smart_ptr/unique_ptr.h>
 #include <Clients/MiniAudioSystemComponent.h>
 #include <Tools/SoundAssetBuilder.h>
+#include <Clients/MiniAudioSystemComponent.h>
 
 namespace MiniAudio
 {

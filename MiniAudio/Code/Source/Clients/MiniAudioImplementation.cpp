@@ -6,12 +6,22 @@
  *
  */
 
+#include <AzCore/PlatformDef.h>
+
+AZ_PUSH_DISABLE_WARNING(4701, "-Wuninitialized") //  warning C4701: potentially uninitialized local variable 'mid' used in vorbis
+
+extern "C" {
+
 #define STB_VORBIS_HEADER_ONLY
-#include <MiniAudio/stb_vorbis.c>    // Enables Vorbis decoding.
+#include <stb_vorbis.c>    // Enables Vorbis decoding.
 
 #define MINIAUDIO_IMPLEMENTATION
-#include <MiniAudio/miniaudio.h>
+#include <miniaudio.h>
 
 // The stb_vorbis implementation must come after the implementation of miniaudio.
 #undef STB_VORBIS_HEADER_ONLY
-#include <MiniAudio/stb_vorbis.c>
+#include <stb_vorbis.c>
+
+}
+
+AZ_POP_DISABLE_WARNING

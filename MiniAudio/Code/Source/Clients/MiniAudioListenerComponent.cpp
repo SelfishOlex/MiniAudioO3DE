@@ -13,6 +13,11 @@
 
 namespace MiniAudio
 {
+    AZ::ComponentDescriptor* MiniAudioListenerComponent_CreateDescriptor()
+    {
+        return MiniAudioListenerComponent::CreateDescriptor();
+    }
+
     MiniAudioListenerComponent::MiniAudioListenerComponent(const MiniAudioListenerComponentConfig& config)
         : BaseClass(config)
     {

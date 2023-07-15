@@ -52,6 +52,9 @@ ly_add_target(
         PUBLIC
             AZ::AzCore
             AZ::AzFramework
+        PRIVATE
+            3rdParty::miniaudio
+            3rdParty::stb_vorbis
 )
 
 # Here add MiniAudio target, it depends on the Private Object library and Public API interface
@@ -119,6 +122,9 @@ if(PAL_TRAIT_BUILD_HOST_TOOLS)
                 AZ::AzToolsFramework
                 AZ::AssetBuilderSDK
                 $<TARGET_OBJECTS:Gem::MiniAudio.Private.Object>
+            PRIVATE
+                 3rdParty::miniaudio
+                 3rdParty::stb_vorbis
     )
 
     ly_add_target(

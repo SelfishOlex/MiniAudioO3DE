@@ -15,6 +15,16 @@
 
 namespace MiniAudio
 {
+    AZ::ComponentDescriptor* MiniAudioEditorSystemComponent_CreateDescriptor()
+    {
+        return MiniAudioEditorSystemComponent::CreateDescriptor();
+    }
+
+    AZ::TypeId MiniAudioEditorSystemComponent_GetTypeId()
+    {
+        return azrtti_typeid<MiniAudioEditorSystemComponent>();
+    }
+
     void MiniAudioEditorSystemComponent::Reflect(AZ::ReflectContext* context)
     {
         if (auto serializeContext = azrtti_cast<AZ::SerializeContext*>(context))

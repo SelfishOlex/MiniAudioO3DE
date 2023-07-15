@@ -12,7 +12,6 @@
 #include <AzCore/Component/Component.h>
 #include <AzCore/Component/TickBus.h>
 #include <AzCore/Component/TransformBus.h>
-#include <MiniAudio/miniaudio.h>
 #include <MiniAudio/MiniAudioBus.h>
 #include <MiniAudio/MiniAudioListenerBus.h>
 

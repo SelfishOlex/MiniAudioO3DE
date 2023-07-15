@@ -14,6 +14,16 @@
 
 namespace MiniAudio
 {
+    AZ::ComponentDescriptor* MiniAudioPlaybackComponent_CreateDescriptor()
+    {
+        return MiniAudioPlaybackComponent::CreateDescriptor();
+    }
+
+    AZ::TypeId MiniAudioPlaybackComponent_GetUUID()
+    {
+        return azrtti_typeid<MiniAudioPlaybackComponent>();
+    }
+
     MiniAudioPlaybackComponent::MiniAudioPlaybackComponent(const MiniAudioPlaybackComponentConfig& config)
         : BaseClass(config)
     {
